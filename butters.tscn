@@ -1,38 +1,38 @@
-[gd_scene load_steps=13 format=3 uid="uid://busx1dgeev7gq"]
+[gd_scene load_steps=13 format=3 uid="uid://b4hijnc2x6we4"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_ufron"]
-[ext_resource type="Texture2D" uid="uid://b7ll63ea33a85" path="res://assets/Butters.png" id="2_l1s5g"]
+[ext_resource type="Script" path="res://Player.gd" id="1_s8hc4"]
+[ext_resource type="Texture2D" uid="uid://b7ll63ea33a85" path="res://assets/Butters.png" id="2_wxgrl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gdc8w"]
-atlas = ExtResource("2_l1s5g")
+atlas = ExtResource("2_wxgrl")
 region = Rect2(0, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5wux0"]
-atlas = ExtResource("2_l1s5g")
+atlas = ExtResource("2_wxgrl")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v21xx"]
-atlas = ExtResource("2_l1s5g")
+atlas = ExtResource("2_wxgrl")
 region = Rect2(0, 128, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vmgjf"]
-atlas = ExtResource("2_l1s5g")
+atlas = ExtResource("2_wxgrl")
 region = Rect2(128, 128, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wcy38"]
-atlas = ExtResource("2_l1s5g")
+atlas = ExtResource("2_wxgrl")
 region = Rect2(0, 384, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mai0c"]
-atlas = ExtResource("2_l1s5g")
+atlas = ExtResource("2_wxgrl")
 region = Rect2(128, 384, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mugyp"]
-atlas = ExtResource("2_l1s5g")
+atlas = ExtResource("2_wxgrl")
 region = Rect2(128, 256, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vdsaq"]
-atlas = ExtResource("2_l1s5g")
+atlas = ExtResource("2_wxgrl")
 region = Rect2(0, 256, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ca34d"]
@@ -85,9 +85,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6bco2"]
 size = Vector2(31, 50)
 
-[node name="Player" type="Area2D"]
+[node name="Butters" type="Area2D"]
 position = Vector2(35, 54)
-script = ExtResource("1_ufron")
+script = ExtResource("1_s8hc4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ca34d")
