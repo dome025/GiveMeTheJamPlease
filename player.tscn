@@ -1,48 +1,48 @@
 [gd_scene load_steps=13 format=3 uid="uid://busx1dgeev7gq"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_ufron"]
-[ext_resource type="Texture2D" uid="uid://b7ll63ea33a85" path="res://assets/Butters.png" id="2_l1s5g"]
+[ext_resource type="Texture2D" uid="uid://cb8o1mnnfdpx3" path="res://assets/Toasty.png" id="2_kwbku"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gdc8w"]
-atlas = ExtResource("2_l1s5g")
+[sub_resource type="AtlasTexture" id="AtlasTexture_uyava"]
+atlas = ExtResource("2_kwbku")
 region = Rect2(0, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5wux0"]
-atlas = ExtResource("2_l1s5g")
+[sub_resource type="AtlasTexture" id="AtlasTexture_x0pky"]
+atlas = ExtResource("2_kwbku")
 region = Rect2(128, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v21xx"]
-atlas = ExtResource("2_l1s5g")
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vwvy"]
+atlas = ExtResource("2_kwbku")
 region = Rect2(0, 128, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vmgjf"]
-atlas = ExtResource("2_l1s5g")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0q1g0"]
+atlas = ExtResource("2_kwbku")
 region = Rect2(128, 128, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wcy38"]
-atlas = ExtResource("2_l1s5g")
+[sub_resource type="AtlasTexture" id="AtlasTexture_utaky"]
+atlas = ExtResource("2_kwbku")
 region = Rect2(0, 384, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mai0c"]
-atlas = ExtResource("2_l1s5g")
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lqkv"]
+atlas = ExtResource("2_kwbku")
 region = Rect2(128, 384, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mugyp"]
-atlas = ExtResource("2_l1s5g")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ud67m"]
+atlas = ExtResource("2_kwbku")
 region = Rect2(128, 256, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vdsaq"]
-atlas = ExtResource("2_l1s5g")
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvvbh"]
+atlas = ExtResource("2_kwbku")
 region = Rect2(0, 256, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ca34d"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gdc8w")
+"texture": SubResource("AtlasTexture_uyava")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5wux0")
+"texture": SubResource("AtlasTexture_x0pky")
 }],
 "loop": true,
 "name": &"idle",
@@ -50,10 +50,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v21xx")
+"texture": SubResource("AtlasTexture_4vwvy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vmgjf")
+"texture": SubResource("AtlasTexture_0q1g0")
 }],
 "loop": true,
 "name": &"running_downway",
@@ -61,10 +61,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wcy38")
+"texture": SubResource("AtlasTexture_utaky")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mai0c")
+"texture": SubResource("AtlasTexture_8lqkv")
 }],
 "loop": true,
 "name": &"running_sideway",
@@ -72,10 +72,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mugyp")
+"texture": SubResource("AtlasTexture_ud67m")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_vdsaq")
+"texture": SubResource("AtlasTexture_nvvbh")
 }],
 "loop": true,
 "name": &"running_upway",
@@ -83,7 +83,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6bco2"]
-size = Vector2(31, 50)
+size = Vector2(62, 76)
 
 [node name="Player" type="Area2D"]
 position = Vector2(35, 54)
@@ -91,8 +91,10 @@ script = ExtResource("1_ufron")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ca34d")
-animation = &"running_upway"
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
+position = Vector2(-1, -12)
 shape = SubResource("RectangleShape2D_6bco2")
+
+[node name="Camera2D" type="Camera2D" parent="."]

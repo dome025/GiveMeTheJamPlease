@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=3 uid="uid://cca2s872dkln2"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_jd5bs"]
+[ext_resource type="Texture2D" uid="uid://v6xie831vwxs" path="res://assets/Honey.png" id="2_c2dyf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v1ddi"]
+atlas = ExtResource("2_c2dyf")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w354g"]
+atlas = ExtResource("2_c2dyf")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ciibx"]
+atlas = ExtResource("2_c2dyf")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ivpwy"]
+atlas = ExtResource("2_c2dyf")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8ajp"]
+atlas = ExtResource("2_c2dyf")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_td2g7"]
+atlas = ExtResource("2_c2dyf")
+region = Rect2(128, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3o8jo"]
+atlas = ExtResource("2_c2dyf")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgmy8"]
+atlas = ExtResource("2_c2dyf")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ca34d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v1ddi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w354g")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ciibx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ivpwy")
+}],
+"loop": true,
+"name": &"running_downway",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8ajp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_td2g7")
+}],
+"loop": true,
+"name": &"running_sideway",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3o8jo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgmy8")
+}],
+"loop": true,
+"name": &"running_upway",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bco2"]
+size = Vector2(31, 50)
+
+[node name="Honey" type="Area2D"]
+position = Vector2(35, 54)
+script = ExtResource("1_jd5bs")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ca34d")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_6bco2")

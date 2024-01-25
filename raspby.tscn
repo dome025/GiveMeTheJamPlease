@@ -1,0 +1,98 @@
+[gd_scene load_steps=13 format=3 uid="uid://bxo48o7vit5kj"]
+
+[ext_resource type="Script" path="res://Player.gd" id="1_8orxb"]
+[ext_resource type="Texture2D" uid="uid://bdgfsj4ygo0fu" path="res://assets/Raspby.png" id="2_1c5br"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqxcl"]
+atlas = ExtResource("2_1c5br")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0jb3"]
+atlas = ExtResource("2_1c5br")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsl1b"]
+atlas = ExtResource("2_1c5br")
+region = Rect2(0, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuglj"]
+atlas = ExtResource("2_1c5br")
+region = Rect2(128, 128, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mrghd"]
+atlas = ExtResource("2_1c5br")
+region = Rect2(0, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1aodo"]
+atlas = ExtResource("2_1c5br")
+region = Rect2(128, 384, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbkub"]
+atlas = ExtResource("2_1c5br")
+region = Rect2(0, 256, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0k1d"]
+atlas = ExtResource("2_1c5br")
+region = Rect2(128, 256, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ca34d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqxcl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0jb3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsl1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yuglj")
+}],
+"loop": true,
+"name": &"running_downway",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mrghd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1aodo")
+}],
+"loop": true,
+"name": &"running_sideway",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbkub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0k1d")
+}],
+"loop": true,
+"name": &"running_upway",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bco2"]
+size = Vector2(31, 50)
+
+[node name="Raspby" type="Area2D"]
+position = Vector2(35, 54)
+script = ExtResource("1_8orxb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ca34d")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_6bco2")
