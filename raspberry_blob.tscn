@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwpk7hrny6dff"]
+
+[ext_resource type="Texture2D" uid="uid://bewyj554j34ka" path="res://assets/raspberry_blobs.png" id="1_t7pff"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dglgi"]
+radius = 2.10049
+
+[node name="RaspberryBlob" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(-24.9906, -21.2381)
+shape = SubResource("CircleShape2D_dglgi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_t7pff")

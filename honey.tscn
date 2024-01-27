@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://cca2s872dkln2"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_jd5bs"]
+[ext_resource type="Script" path="res://collectable.gd" id="1_08q0v"]
 [ext_resource type="Texture2D" uid="uid://v6xie831vwxs" path="res://assets/Honey.png" id="2_c2dyf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v1ddi"]
@@ -83,16 +83,18 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6bco2"]
-size = Vector2(31, 50)
+size = Vector2(56, 106)
 
 [node name="Honey" type="Area2D"]
 position = Vector2(35, 54)
-script = ExtResource("1_jd5bs")
+script = ExtResource("1_08q0v")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ca34d")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
+position = Vector2(2, -1)
 shape = SubResource("RectangleShape2D_6bco2")
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]

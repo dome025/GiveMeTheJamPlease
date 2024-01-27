@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://bxo48o7vit5kj"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_8orxb"]
+[ext_resource type="Script" path="res://collectable.gd" id="1_px428"]
 [ext_resource type="Texture2D" uid="uid://bdgfsj4ygo0fu" path="res://assets/Raspby.png" id="2_1c5br"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rqxcl"]
@@ -83,16 +83,18 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6bco2"]
-size = Vector2(31, 50)
+size = Vector2(57, 113)
 
 [node name="Raspby" type="Area2D"]
 position = Vector2(35, 54)
-script = ExtResource("1_8orxb")
+script = ExtResource("1_px428")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ca34d")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
+position = Vector2(2.5, -2.5)
 shape = SubResource("RectangleShape2D_6bco2")
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://j7ffbjy4aoo3"]
+
+[ext_resource type="Texture2D" uid="uid://up3vk524iesd" path="res://assets/honey_blob.png" id="1_5o8mj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dglgi"]
+radius = 2.10049
+
+[node name="HoneyBlob" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(-24.9906, -21.2381)
+shape = SubResource("CircleShape2D_dglgi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5o8mj")

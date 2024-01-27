@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://b4hijnc2x6we4"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_s8hc4"]
+[ext_resource type="Script" path="res://collectable.gd" id="1_571a0"]
 [ext_resource type="Texture2D" uid="uid://b7ll63ea33a85" path="res://assets/Butters.png" id="2_i0c7i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ghm54"]
@@ -83,16 +83,18 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6bco2"]
-size = Vector2(31, 50)
+size = Vector2(58, 102)
 
 [node name="Butters" type="Area2D"]
 position = Vector2(35, 54)
-script = ExtResource("1_s8hc4")
+script = ExtResource("1_571a0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ca34d")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
+position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_6bco2")
+
+[connection signal="area_shape_entered" from="." to="." method="_on_area_shape_entered"]
